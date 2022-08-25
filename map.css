@@ -11,13 +11,13 @@
 
 .ex-layout .main .lnb{
 	float:left;
-	width:30%;
+	width:35%;
 	height:60%;
 }
 
 .ex-layout .main .content{
 	float: left;
-	width: 70%;
+	width: 65%;
 }
 .ex-layout .footer{
 	padding: 15px;
@@ -50,4 +50,29 @@ body { height: 100%; margin: 0; padding: 0 }
 	vertical-align: top;
 	border-bottom: 1px solid #ccc;
   }
-  
+  table.type09 {
+    border-collapse: collapse;
+    text-align: left;
+    line-height: 1.5;
+  }
+  table.type09 thead th {
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    color: #369;
+    border-bottom: 3px solid #036;
+  }
+  table.type09 tbody th {
+    width: 150px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+    background: #F3F6F7;
+  }
+  table.type09 td {
+    width: 350px;
+    padding: 10px;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+  }
