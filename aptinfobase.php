@@ -1,4 +1,72 @@
-<?php
+<!DOCTYPE html>
+<html>
+    <head>
+    <style>
+#container {
+  display: flex;
+}
+#box-left {
+  background: red;
+  flex: 1;
+}
+#box-center {
+  background: orange;
+  flex: 1;
+  text-align: center;
+}
+#box-right {
+  background: yellow;
+  flex: 1;
+  text-align: right;
+}
+
+table.type09 {
+    border-collapse: collapse;
+    text-align: left;
+    line-height: 1.5;
+  }
+  table.type09 thead th {
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    color: #369;
+    border-bottom: 3px solid #036;
+  }
+  table.type09 tbody th {
+    width: 150px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+    background: #F3F6F7;
+  }
+  table.type09 td {
+    width: 350px;
+    padding: 10px;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+  }
+  .btnstyle {
+    display: block;
+    width: 150px;
+    height: 25px;
+    background: #4E9CAF;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+}
+
+</style>
+
+    </head>
+
+    <body>
+    <div id='container'>
+    <div id='box-left'>
+    <?php
   $wantedcode=getenv("QUERY_STRING");
   $con=mysqli_connect("localhost", "root", "000000", "aptinfo") or die("MySQL 접속 실패");
   $sql = " SELECT * FROM full_data where aptcode='$wantedcode'";
@@ -50,57 +118,14 @@ $applytime= array();
   array_push($applytime, $row['applytime']);
   array_push($mngtype, $row['mngtype']);
   }
-mysqli_close($con);
+  mysqli_close($con);
+
 ?>
 
-<html>
-  <head>
-    <style>
-    table.type09 {
-    border-collapse: collapse;
-    text-align: left;
-    line-height: 1.5;
-  }
-  table.type09 thead th {
-    padding: 10px;
-    font-weight: bold;
-    vertical-align: top;
-    color: #369;
-    border-bottom: 3px solid #036;
-  }
-  table.type09 tbody th {
-    width: 150px;
-    padding: 10px;
-    font-weight: bold;
-    vertical-align: top;
-    border-bottom: 1px solid #ccc;
-    background: #F3F6F7;
-  }
-  table.type09 td {
-    width: 350px;
-    padding: 10px;
-    vertical-align: top;
-    border-bottom: 1px solid #ccc;
-  }
-  .btnstyle {
-    display: block;
-    width: 150px;
-    height: 25px;
-    background: #4E9CAF;
-    padding: 10px;
-    text-align: center;
-    border-radius: 5px;
-    color: white;
-    font-weight: bold;
-    line-height: 25px;
-}
-    </style>
-     </head>
-     <body>
-     <table class="type09">
+    <table class="type09">
 <thead>
 <tr>
-<th colspan="2"  scope="cols"><h1><?php echo $aptname[0] ?></h1></th>
+<th colspan="2" scope="cols"><h1><?php echo $aptname[0] ?></h1></th>
 </tr>
 </thead>
 <tbody>
@@ -175,7 +200,24 @@ mysqli_close($con);
 </tr>
 </tbody>
 </table>
-</body>
+    </div>
+    <div id='box-center'>
+<div style="background-color:#036; height:50%;">
+<!--그래프1-->
+
+</div>
+<div style="background-color:#036; height:50%;">
+<!--그래프2-->
+
+</div>
+    
+    </div>
+    <div id='box-right'>
+        
+    </div>
+</div>
+        
+    </body>
 <script>
   var wantcode = "<?php echo $wantedcode ?>";
 </script>
